@@ -1,113 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ShopEasy - Your Online Store</title>
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f2f6fc;
-    margin: 0; padding: 0;
-  }
-  header {
-    background-color: #0052cc;
-    color: white;
-    padding: 1.5rem;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-  main {
-    max-width: 1000px;
-    margin: 2rem auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-    gap: 1.5rem;
-    padding: 0 1rem;
-  }
-  .product-card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 12px rgba(0,0,0,0.1);
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.2s ease-in-out;
-  }
-  .product-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 24px rgba(0,0,0,0.15);
-  }
-  .product-image {
-    max-height: 180px;
-    object-fit: contain;
-    margin-bottom: 1rem;
-  }
-  .product-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem 0;
-    color: #333;
-  }
-  .product-price {
-    font-size: 1.2rem;
-    color: #007700;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  .buy-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.8rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  .buy-button:hover {
-    background-color: #0056b3;
-  }
-  footer {
-    text-align: center;
-    color: #888;
-    padding: 2rem 0;
-    font-size: 0.9rem;
-  }
-</style>
-</head>
-<body>
-<header>ShopEasy</header>
-<main>
-  <article class="product-card">
-    <img src="https://via.placeholder.com/300x180?text=Smartphone" alt="Smartphone" class="product-image" />
-    <h2 class="product-title">Super Smartphone X100</h2>
-    <p class="product-price">$799</p>
-    <button class="buy-button">Buy Now</button>
-  </article>
-  <article class="product-card">
-    <img src="https://via.placeholder.com/300x180?text=Laptop" alt="Laptop" class="product-image" />
-    <h2 class="product-title">Ultra Laptop Pro 15"</h2>
-    <p class="product-price">$1,299</p>
-    <button class="buy-button">Buy Now</button>
-  </article>
-  <article class="product-card">
-    <img src="https://via.placeholder.com/300x180?text=Headphones" alt="Headphones" class="product-image" />
-    <h2 class="product-title">Noise Cancelling Headphones</h2>
-    <p class="product-price">$199</p>
-    <button class="buy-button">Buy Now</button>
-  </article>
-  <article class="product-card">
-    <img src="https://via.placeholder.com/300x180?text=Smartwatch" alt="Smartwatch" class="product-image" />
-    <h2 class="product-title">Smartwatch Series 5</h2>
-    <p class="product-price">$349</p>
-    <button class="buy-button">Buy Now</button>
-  </article>
-</main>
-<footer>© 2025 ShopEasy Inc. All rights reserved.</footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dreamy Illustrations</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@400;600&display=swap');
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      .logo-font {
+        font-family: 'Pacifico', cursive;
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-b from-[#FBEFF8] to-[#D8F3FF] min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <header class="flex justify-between items-center px-8 py-6">
+      <div class="text-3xl text-[#5B4A82] logo-font">DreamyDraw</div>
+      <nav class="space-x-6 text-[#5B4A82] font-semibold">
+        <a href="#" class="hover:underline">Home</a>
+        <a href="#" class="hover:underline">Gallery</a>
+        <a href="#" class="hover:underline">About</a>
+        <a href="#" class="hover:underline">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Main section -->
+    <main class="flex-grow flex flex-col items-center justify-center text-center px-4">
+      <img src="your-illustration.png" alt="Dreamy illustration" class="w-72 h-72 object-contain mb-6 drop-shadow-lg" />
+      <h1 class="text-4xl md:text-5xl font-bold text-[#444066] mb-4">
+        Find Your Dream in Colors
+      </h1>
+      <p class="text-[#66657B] text-lg max-w-xl mb-6">
+        A world where imagination meets illustration. Explore hand-drawn digital artworks that inspire warmth and creativity.
+      </p>
+      <a href="#" class="bg-[#8AB6D6] hover:bg-[#76a2c5] text-white px-6 py-3 rounded-full text-lg shadow-md transition">
+        Explore Now
+      </a>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-[#888] py-4">
+      © 2025 DreamyDraw. All rights reserved.
+    </footer>
+  </body>
 </html>
 
