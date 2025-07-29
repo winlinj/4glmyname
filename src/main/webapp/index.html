@@ -1,70 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Shopping Mall</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-    header {
-      background-color: #333;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-    }
-    .product {
-      background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-    .product img {
-      max-width: 100%;
-      height: auto;
-    }
-    .product h3 {
-      margin: 0.5rem 0;
-    }
-    .product button {
-      background-color: #28a745;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINUZOO - Secure Cloud MSP</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+
+        :root {
+            --color-primary: #00A9A5; /* Teal */
+            --color-secondary: #43A047; /* Green */
+            --color-background: #121826;
+            --color-surface: #1E293B;
+            --color-text: #E2E8F0;
+            --color-text-muted: #94A3B8;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        section {
+            margin-bottom: 100px;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: var(--color-primary);
+            margin-bottom: 40px;
+        }
+        
+        h3 {
+            font-size: 1.5em;
+            color: #FFFFFF;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: #FFFFFF;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 169, 165, 0.2);
+        }
+        
+        .button-secondary {
+            background: none;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .grid-2-col, .grid-3-col {
+            display: grid;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .grid-2-col {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .grid-3-col {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .card {
+            background-color: var(--color-surface);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card p {
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        .image-placeholder {
+            background-color: #334155;
+            border-radius: 12px;
+            width: 100%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-muted);
+            margin-bottom: 20px;
+        }
+        
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .form-container input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            font-size: 1em;
+        }
+
+    </style>
 </head>
 <body>
-  <header>
-    <h1>My Shopping Mall</h1>
-  </header>
-  <main class="products">
-    <div class="product">
-      <img src="https://via.placeholder.com/200" alt="Product 1" />
-      <h3>Product 1</h3>
-      <p>$19.99</p>
-      <button>Add to Cart</button>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/200" alt="Product 2" />
-      <h3>Product 2</h3>
-      <p>$29.99</p>
-      <button>Add to Cart</button>
-    </div>
-  </main>
+
+    <main>
+        <section id="hero" class="container">
+            <h1>인프라는 속도를, 보안은 신뢰를.<br>귀사의 혁신은 그 교차점에서 시작됩니다.</h1>
+            <p>LINUZOO는 속도와 보안이라는 두 마리 토끼를 잡는 것이 아니라, 처음부터 하나의 목표로 설계합니다. Terraform과 Packer로 구현된 불변의 인프라와, 코드 한 줄이 배포되기 전까지 모든 것을 검증하는 자동화된 DevSecOps 파이프라인을 경험해보세요.</p>
+            <a href="#contact" class="button">무료 인프라 보안 진단 신청 (30분 소요)</a>
+        </section>
+
+        <section id="solutions" class="container">
+            <h2>최신 기술로 구현된 엔드-투-엔드 솔루션</h2>
+            <div class="grid-3-col">
+                <div class="card">
+                    <h3>클라우드 인프라 자동화</h3>
+                    <p>AWS 환경에서 Terraform을 활용한 인프라 코드화(IaC)로 일관된 환경을 구축합니다. 환경 간 차이로 인한 문제를 원천적으로 제거합니다.</p>
+                </div>
+                <div class="card">
+                    <h3>불변 인프라 구현</h3>
+                    <p>Packer로 빌드된 이미지를 기반으로 서버를 수정하지 않고 교체하는 방식으로 운영합니다. 예측 불가능한 서버 상태 변화를 방지하고 장애 복구 시간을 단축합니다.</p>
+                </div>
+                <div class="card">
+                    <h3>DevSecOps 파이프라인</h3>
+                    <p>Jenkins, SonarQube, Trivy 등을 연동하여 코드 커밋부터 배포까지 모든 단계에서 보안 검증을 자동화합니다. 보안을 개발 프로세스의 핵심 요소로 통합합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="before-after" class="container">
+            <h2>"Before LINUZOO" vs "After LINUZOO"</h2>
+            <p>실제 사례를 통해 LINUZOO의 가치를 확인하세요. 우리는 결과로 말합니다.</p>
+            <div class="grid-2-col">
+                <div class="card">
+                    <h3>Before: 수동 설정의 필연적 실수</h3>
+                    <div class="image-placeholder"></div>
+                    <p>전 세계에 열린 관리자 포트는 공격의 첫 번째 표적이 됩니다. 대부분의 보안 사고는 이런 기본적인 설정 오류에서 시작되며, 수동 설정에 의존하는 인프라는 결국 실수를 만듭니다.</p>
+                </div>
+                <div class="card">
+                    <h3>After: 자동화된 정책의 힘</h3>
+                    <div class="image-placeholder"></div>
+                    <p>보안 기준 미달 시, 파이프라인이 스스로 배포를 차단하여 휴먼 에러를 원천적으로 방지합니다. 코드가 운영 환경에 도달하기 전에 모든 취약점을 식별하고 해결합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="value" class="container">
+            <h2>그래서, 귀사의 비즈니스는 어떻게 달라지는가?</h2>
+            <div class="grid-3-col">
+                <div class="card">
+                    <h3>개발 속도 향상</h3>
+                    <p>개발팀은 더 이상 인프라와 보안에 신경 쓰지 않고, 오직 비즈니스 로직 개발에만 집중할 수 있습니다. 평균 개발 주기가 30% 단축됩니다.</p>
+                </div>
+                <div class="card">
+                    <h3>보안 리스크 감소</h3>
+                    <p>자동화된 보안 게이트가 24시간 동작하여, 잠재적 보안 사고의 90% 이상을 사전에 예방합니다. 취약점 발견 시 자동으로 알림을 받고 조치할 수 있습니다.</p>
+                </div>
+                <div class="card">
+                    <h3>비용 최적화</h3>
+                    <p>IaC 기반의 효율적인 자원 관리와 불필요한 리소스 생성을 방지하여 클라우드 비용을 평균 20% 이상 절감합니다.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="testimonial" class="container">
+             <h2>우리의 고객사들이 직접 증명합니다</h2>
+             <div class="card">
+                <p style="font-size: 1.5em; font-style: italic; text-align:center; color: var(--color-text); max-width: 800px; margin-bottom: 20px;">"LINUZOO가 구축한 DevSecOps 파이프라인 덕분에 개발자들이 보안 문제에 대한 부담 없이 혁신에 집중할 수 있게 되었습니다. 배포 주기는 2주에서 하루로 단축되었고, 보안 인시던트는 거의 제로에 가까워졌습니다."</p>
+                <p style="text-align:center; font-weight: 700;">- 김정훈 CTO, 핀테크 스타트업 A사 -</p>
+             </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2>논의가 아닌, 진단을 시작하겠습니다.</h2>
+            <p>지금 바로 LINUZOO의 클라우드 전문가 팀과 함께, 귀사의 현재 인프라가 가진 잠재적 리스크와 개선 포인트를 확인해보세요. 단 30분 만에 인프라의 현재 상태를 객관적으로 분석하고, 즉시 적용 가능한 개선 방안을 제시해 드립니다.</p>
+            <div class="form-container">
+                <input type="text" name="name" placeholder="Name">
+                <input type="email" name="email" placeholder="Email">
+                <input type="text" name="company" placeholder="Company Name">
+                <a href="#" class="button" style="width: 100%; text-align: center; box-sizing: border-box;">무료 진단 세션 예약하기</a>
+            </div>
+        </section>
+    </main>
+
 </body>
 </html>
-
